@@ -3,9 +3,10 @@ TargetBot.Creature.calculatePriority = function(creature, config, path)
   local priority = 0
   local currentTarget = g_game.getAttackingCreature()
 
-  -- extra priority if it's current target
+  -- extra priority if it's current target (histeresis: evita que el auto-target
+  -- brinque entre monstruos de prioridad similar cada tick -> ya no se cicla)
   if currentTarget == creature then
-    priority = priority + 1
+    priority = priority + 7
   end
 
   -- check if distance is ok
