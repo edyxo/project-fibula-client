@@ -1,7 +1,7 @@
 MainWindow
   id: donateWindow
   !text: tr('Support Project Fibula')
-  size: 272 384
+  size: 348 336
   @onEscape: modules.game_donate.toggle()
 
   Panel
@@ -36,31 +36,68 @@ MainWindow
       margin-top: 3
 
     UIWidget
-      id: qrFrame
-      size: 212 212
+      id: mpFrame
+      size: 150 150
       border-width: 2
       border-color: #d4af37
       background-color: #ffffff
       anchors.top: subtitle.bottom
-      anchors.horizontalCenter: parent.horizontalCenter
+      anchors.left: parent.left
       margin-top: 12
 
       UIWidget
-        id: qr
+        id: mpQr
+        image-source: /images/mercadopago-qr
+        image-smooth: true
+        anchors.fill: parent
+        margin: 4
+
+    Label
+      id: mpLabel
+      !text: 'MercadoPago'
+      text-align: center
+      color: #d4af37
+      anchors.top: mpFrame.bottom
+      anchors.left: mpFrame.left
+      anchors.right: mpFrame.right
+      margin-top: 6
+
+    UIWidget
+      id: bnFrame
+      size: 150 150
+      border-width: 2
+      border-color: #d4af37
+      background-color: #ffffff
+      anchors.top: subtitle.bottom
+      anchors.right: parent.right
+      margin-top: 12
+
+      UIWidget
+        id: bnQr
         image-source: /images/binance-qr
         image-smooth: true
         anchors.fill: parent
         margin: 4
 
     Label
-      id: caption
-      !text: tr('Binance donation - Thank you!')
+      id: bnLabel
+      !text: 'Binance'
       text-align: center
       color: #d4af37
-      anchors.top: qrFrame.bottom
+      anchors.top: bnFrame.bottom
+      anchors.left: bnFrame.left
+      anchors.right: bnFrame.right
+      margin-top: 6
+
+    Label
+      id: caption
+      !text: tr('Scan a QR with your camera. Thank you!')
+      text-align: center
+      color: #ffffff
+      anchors.top: mpLabel.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      margin-top: 10
+      margin-top: 8
 
   Button
     id: closeButton
