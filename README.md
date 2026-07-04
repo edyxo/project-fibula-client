@@ -27,9 +27,13 @@ That's it — **no install, no setup**. The server, protocol (7.72), sprites, wo
 >
 > Every donation helps keep **Project Fibula** alive and improving. Thank you! 🙏
 
+**💳 MercadoPago:** https://link.mercadopago.com.mx/edyxo
+
+**₿ Binance:** scan the QR below with your camera
+
 <img src="data/images/binance-qr.png" width="200" alt="Binance donation QR"/>
 
-**Scan the QR with your camera to donate via Binance** — or hit the **Donate** button in-game.
+Or just hit the **Donate** button in-game.
 
 ---
 
