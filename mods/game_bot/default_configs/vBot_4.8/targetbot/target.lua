@@ -5,6 +5,9 @@ local cavebotAllowance = 0
 local lureEnabled = true
 local dangerValue = 0
 local looterStatus = ""
+-- Target lock (anti-ciclado): recordar el target actual y cuando cambiamos
+local lastTargetSwitch = 0
+local lockedTargetRef = nil
 
 -- ui
 local configWidget = UI.Config()
@@ -54,6 +57,8 @@ targetbotMacro = macro(100, function()
   local dangerLevel = 0
   local targets = 0
   local highestPriorityParams = nil
+  local currentAttacked = g_game.getAttackingCreature()
+  local currentAttackedParams = nil
   for i, creature in ipairs(creatures) do
     local hppc = creature:getHealthPercent()
     if hppc and hppc > 0 then
@@ -63,6 +68,9 @@ targetbotMacro = macro(100, function()
         dangerLevel = dangerLevel + params.danger
         if params.priority > 0 then
           targets = targets + 1
+          if currentAttacked and creature == currentAttacked then
+            currentAttackedParams = params
+          end
           if params.priority > highestPriority then
             highestPriority = params.priority
             highestPriorityParams = params
@@ -83,6 +91,20 @@ targetbotMacro = macro(100, function()
   local lootingStatus = TargetBot.Looting.getStatus()
   looterStatus = TargetBot.Looting.getStatus()
   dangerValue = dangerLevel
+
+  -- Target lock (anti-ciclado): si ya atacamos un target valido y el "mejor" es otro
+  -- pero cambiamos hace menos de 700ms, mantener el actual. Evita brincar entre
+  -- monstruos casi-empatados cuando la distancia/path oscila. Si el target murio o
+  -- salio de rango, currentAttackedParams es nil y el cambio se permite de inmediato.
+  if currentAttackedParams and highestPriorityParams and highestPriorityParams.creature ~= currentAttacked then
+    if now - lastTargetSwitch < 700 then
+      highestPriorityParams = currentAttackedParams
+    end
+  end
+  if highestPriorityParams and highestPriorityParams.creature ~= lockedTargetRef then
+    lastTargetSwitch = now
+    lockedTargetRef = highestPriorityParams.creature
+  end
 
   ui.danger.right:setText(dangerLevel)
   if highestPriorityParams and not isInPz() then

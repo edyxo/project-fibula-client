@@ -6,6 +6,9 @@ local anchorPosition = nil
 local lastCall = now
 local delayFrom = nil
 local dynamicLureDelay = false
+-- anti-ciclado: en 7.72 getAttackingCreature() no se "pega" confiable, throttleamos el re-ataque
+local lastCommandedAttackId = 0
+local lastAttackTime = 0
 
 function getWalkableTilesCount(position)
   local count = 0
@@ -56,7 +59,14 @@ TargetBot.Creature.attack = function(params, targets, isLooting) -- params {conf
   local creature = params.creature
 
   if g_game.getAttackingCreature() ~= creature then
-    g_game.attack(creature)
+    -- target NUEVO -> atacar de inmediato (retarget rapido).
+    -- mismo target que ya mandamos pero no se "pega" (unreachable / desync 7.72) ->
+    -- re-mandar solo cada 350ms para no ciclar como si fuera click derecho repetido.
+    if creature:getId() ~= lastCommandedAttackId or now - lastAttackTime > 350 then
+      g_game.attack(creature)
+      lastCommandedAttackId = creature:getId()
+      lastAttackTime = now
+    end
   end
 
   if not isLooting then -- walk only when not looting
