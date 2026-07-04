@@ -29,7 +29,7 @@ That's it — **no install, no setup**. The server, protocol (7.72), sprites, wo
 
 <img src="data/images/binance-qr.png" width="200" alt="Binance donation QR"/>
 
-**Scan the QR with your Binance app to donate** — or hit the **Donate** button in-game.
+**Scan the QR with your camera to donate via Binance** — or hit the **Donate** button in-game.
 
 ---
 
