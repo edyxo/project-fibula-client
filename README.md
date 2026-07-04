@@ -30,12 +30,12 @@ That's it — **no install, no setup**. The server, protocol (7.72), sprites, wo
 Scan a QR with your camera, or hit the **Donate** button in-game.
 
 <p align="center">
-  <img src="data/images/mercadopago-qr.png" width="180" alt="MercadoPago donation QR"/>
+  <img src="data/images/ko-fi-qr.png" width="180" alt="Ko-fi donation QR"/>
   &nbsp;&nbsp;&nbsp;
   <img src="data/images/binance-qr.png" width="180" alt="Binance donation QR"/>
 </p>
 <p align="center">
-  <b>💳 MercadoPago</b> — <a href="https://link.mercadopago.com.mx/edyxo">link.mercadopago.com.mx/edyxo</a>
+  <b>☕ Ko-fi</b> — <a href="https://ko-fi.com/edyxo">ko-fi.com/edyxo</a>
   &nbsp;&nbsp;•&nbsp;&nbsp;
   <b>₿ Binance</b>
 </p>

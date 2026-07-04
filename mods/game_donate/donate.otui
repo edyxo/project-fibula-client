@@ -1,7 +1,7 @@
 MainWindow
   id: donateWindow
   !text: tr('Support Project Fibula')
-  size: 348 336
+  size: 392 356
   @onEscape: modules.game_donate.toggle()
 
   Panel
@@ -13,14 +13,14 @@ MainWindow
     margin-bottom: 34
     border-width: 2
     border-color: #d4af37
-    background-color: #14141ae0
-    padding: 12
+    background-color: #14141af0
+    padding: 14
 
     Label
       id: title
       !text: tr('Enjoying the client?')
       text-align: center
-      color: #d4af37
+      color: #ffcf5c
       anchors.top: parent.top
       anchors.left: parent.left
       anchors.right: parent.right
@@ -29,48 +29,50 @@ MainWindow
       id: subtitle
       !text: tr('Consider donating to the creator')
       text-align: center
-      color: #ffffff
+      color: #eaeaea
       anchors.top: title.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      margin-top: 3
+      margin-top: 4
 
     UIWidget
-      id: mpFrame
-      size: 150 150
+      id: kofiFrame
+      size: 144 144
       border-width: 2
       border-color: #d4af37
       background-color: #ffffff
       anchors.top: subtitle.bottom
-      anchors.left: parent.left
-      margin-top: 12
+      anchors.right: parent.horizontalCenter
+      margin-right: 22
+      margin-top: 18
 
       UIWidget
-        id: mpQr
-        image-source: /images/mercadopago-qr
+        id: kofiQr
+        image-source: /images/ko-fi-qr
         image-smooth: true
         anchors.fill: parent
         margin: 4
 
     Label
-      id: mpLabel
-      !text: 'MercadoPago'
+      id: kofiLabel
+      !text: 'Ko-fi'
       text-align: center
-      color: #d4af37
-      anchors.top: mpFrame.bottom
-      anchors.left: mpFrame.left
-      anchors.right: mpFrame.right
-      margin-top: 6
+      color: #ff5e5b
+      anchors.top: kofiFrame.bottom
+      anchors.left: kofiFrame.left
+      anchors.right: kofiFrame.right
+      margin-top: 8
 
     UIWidget
       id: bnFrame
-      size: 150 150
+      size: 144 144
       border-width: 2
       border-color: #d4af37
       background-color: #ffffff
       anchors.top: subtitle.bottom
-      anchors.right: parent.right
-      margin-top: 12
+      anchors.left: parent.horizontalCenter
+      margin-left: 22
+      margin-top: 18
 
       UIWidget
         id: bnQr
@@ -83,21 +85,21 @@ MainWindow
       id: bnLabel
       !text: 'Binance'
       text-align: center
-      color: #d4af37
+      color: #f0b90b
       anchors.top: bnFrame.bottom
       anchors.left: bnFrame.left
       anchors.right: bnFrame.right
-      margin-top: 6
+      margin-top: 8
 
     Label
       id: caption
-      !text: tr('Scan a QR with your camera. Thank you!')
+      !text: tr('Scan a QR with your camera - Thank you!')
       text-align: center
-      color: #ffffff
-      anchors.top: mpLabel.bottom
+      color: #7ed389
+      anchors.top: kofiLabel.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      margin-top: 8
+      margin-top: 12
 
   Button
     id: closeButton
