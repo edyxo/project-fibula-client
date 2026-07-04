@@ -3,6 +3,9 @@
 *.lua eol=lf 
 *.md  text eol=lf
 *.txt eol=lf 
-*.ot* eol=lf 
-*.cpp eol=lf 
+*.ot* eol=lf
+# Binarios OTClient: override del *.ot* de arriba (no convertir saltos de linea)
+*.otmm binary
+*.otcm binary
+*.cpp eol=lf
 *.h   eol=lf 
