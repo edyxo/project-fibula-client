@@ -1,0 +1,11 @@
+Module
+  name: game_donate
+  description: Support Project Fibula (Binance QR)
+  author: Fibula
+  sandboxed: true
+  autoload: true
+  reloadable: true
+  dependencies: [ game_mainpanel ]
+  scripts: [ donate ]
+  @onLoad: init()
+  @onUnload: terminate()

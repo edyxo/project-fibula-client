@@ -1,0 +1,72 @@
+MainWindow
+  id: donateWindow
+  !text: tr('Support Project Fibula')
+  size: 272 384
+  @onEscape: modules.game_donate.toggle()
+
+  Panel
+    id: frame
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-bottom: 34
+    border-width: 2
+    border-color: #d4af37
+    background-color: #14141ae0
+    padding: 12
+
+    Label
+      id: title
+      !text: tr('Enjoying the client?')
+      text-align: center
+      color: #d4af37
+      anchors.top: parent.top
+      anchors.left: parent.left
+      anchors.right: parent.right
+
+    Label
+      id: subtitle
+      !text: tr('Consider donating to the creator')
+      text-align: center
+      color: #ffffff
+      anchors.top: title.bottom
+      anchors.left: parent.left
+      anchors.right: parent.right
+      margin-top: 3
+
+    UIWidget
+      id: qrFrame
+      size: 212 212
+      border-width: 2
+      border-color: #d4af37
+      background-color: #ffffff
+      anchors.top: subtitle.bottom
+      anchors.horizontalCenter: parent.horizontalCenter
+      margin-top: 12
+
+      UIWidget
+        id: qr
+        image-source: /images/binance-qr
+        image-smooth: true
+        anchors.fill: parent
+        margin: 4
+
+    Label
+      id: caption
+      !text: tr('Binance donation - Thank you!')
+      text-align: center
+      color: #d4af37
+      anchors.top: qrFrame.bottom
+      anchors.left: parent.left
+      anchors.right: parent.right
+      margin-top: 10
+
+  Button
+    id: closeButton
+    !text: tr('Close')
+    width: 72
+    anchors.bottom: parent.bottom
+    anchors.horizontalCenter: parent.horizontalCenter
+    margin-bottom: 6
+    @onClick: modules.game_donate.toggle()
