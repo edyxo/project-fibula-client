@@ -57,6 +57,14 @@ Scan a QR with your camera, or hit the **Donate** button in-game.
   <em>TargetBot creature editor&nbsp;&nbsp;•&nbsp;&nbsp;HealBot, auto-eat &amp; auto-equip</em>
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/screenshot_5.png" width="88%" alt="vBot Extras and settings panel"/><br/>
+  <em>👀 Don't forget the sneaky <b>Extras / vBot Settings</b> — CaveBot pathfinding, Anti-Kick, MW &amp; WG timers, Auto Open Doors &amp; more</em>
+</p>
+
+> ℹ️ The full bot suite is **vBot** running on **OTClientV8**. To learn every capability, script and setting, check the OTCv8 project:
+> **[OTClientV8 repo](https://github.com/OTCv8/otclientv8)** · **[Wiki](https://github.com/OTCv8/otclientv8/wiki)** · **Official OTCv8 Discord** (linked in-client, top-left of the bot panel).
+
 ---
 
 ## ✨ Features
