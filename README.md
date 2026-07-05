@@ -3,7 +3,7 @@
 A custom Tibia **7.72** client for **Project Fibula** (`world.fibula.app`).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Download](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/edyxo/projectfibulaclient/releases/latest)
+[![Download](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/edyxo/project-fibula-client/releases/latest)
 
 > Built on **[OTClient Redemption](https://github.com/opentibiabr/otclient)** by **opentibiabr** — full credit and thanks to the OTClient team and contributors.
 > This is a fork configured and maintained for Project Fibula. Licensed under MIT (see [LICENSE](LICENSE)).
@@ -12,7 +12,7 @@ A custom Tibia **7.72** client for **Project Fibula** (`world.fibula.app`).
 
 ## ⬇️ Download & Play — plug and play
 
-1. Download the latest **[ProjectFibula-Client.zip](https://github.com/edyxo/projectfibulaclient/releases/latest)**
+1. Download the latest **[ProjectFibula-Client.zip](https://github.com/edyxo/project-fibula-client/releases/latest)**
 2. **Extract** it anywhere
 3. Run **`otclient.exe`**
 4. Log in with your Fibula account and play 🎮
